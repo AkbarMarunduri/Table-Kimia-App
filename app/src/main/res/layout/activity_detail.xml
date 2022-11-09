@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    android:fitsSystemWindows="true"
+    tools:context=".DetailActivity">
+
+    <include
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/cell_image_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/americium"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/standard_state"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Standard State"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cell_image_view" />
+
+                <View
+                    android:id="@+id/separator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/standard_state" />
+
+                <TextView
+                    android:id="@+id/atomic_mass"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Atomic Mass"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator1" />
+
+                <View
+                    android:id="@+id/separator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/atomic_mass" />
+
+                <TextView
+                    android:id="@+id/electron_configuration"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Electron Configuration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator2" />
+
+                <View
+                    android:id="@+id/separator3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/electron_configuration" />
+
+                <TextView
+                    android:id="@+id/oxidation_states"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Oxidation States"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator3" />
+
+                <View
+                    android:id="@+id/separator4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/oxidation_states" />
+
+                <TextView
+                    android:id="@+id/electronegativity"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Electronegativity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator4" />
+
+                <View
+                    android:id="@+id/separator5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/electronegativity" />
+
+                <TextView
+                    android:id="@+id/atomic_radiusls"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Atomic Radius"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator5" />
+
+                <View
+                    android:id="@+id/separator6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/atomic_radiusls" />
+
+                <TextView
+                    android:id="@+id/ionization_energy"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Ionization Energy"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator6" />
+
+                <View
+                    android:id="@+id/separator7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/ionization_energy" />
+
+                <TextView
+                    android:id="@+id/electron_affinity"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Electron Affinity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator7" />
+
+                <View
+                    android:id="@+id/separator8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/electron_affinity" />
+
+                <TextView
+                    android:id="@+id/melting_point"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Electron Affinity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator8" />
+
+                <View
+                    android:id="@+id/separator9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/melting_point" />
+
+                <TextView
+                    android:id="@+id/boiling_point"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Boiling Point"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator9" />
+
+                <View
+                    android:id="@+id/separator10"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/boiling_point" />
+
+                <TextView
+                    android:id="@+id/density"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Density"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator10" />
+
+                <View
+                    android:id="@+id/separator11"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/density" />
+
+                <TextView
+                    android:id="@+id/year_discovered"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:text="Year Discovered"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator11" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
