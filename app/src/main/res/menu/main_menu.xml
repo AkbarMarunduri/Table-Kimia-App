@@ -7,6 +7,6 @@
         app:showAsAction="ifRoom"
         android:iconTint="@color/white"
         android:onClick="onAboutAction"
-        android:icon="@drawable/ic_baseline_person_24" />
+        android:icon="@drawable/ic_about" />
 
 </menu>

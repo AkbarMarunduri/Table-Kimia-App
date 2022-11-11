@@ -6,13 +6,17 @@ import android.graphics.Canvas
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
+import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.example.periodic_table_app.databinding.ActivityDetailBinding
 import com.example.periodic_table_app.model.Cell
 import kotlinx.android.synthetic.main.toolbar_main.*
+import java.io.File
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -38,6 +42,20 @@ class DetailActivity : AppCompatActivity() {
             .load(imagelink)
             .fitCenter()
             .into(binding.cellImageView)
+        binding.apply {
+            tvStandardState.text=cell.StandardState
+            tvAtomicMass.text=cell.AtomicMass
+            tvElectronConfiguration.text=cell.ElectronConfiguration
+            tvOxidationStates.text=cell.OxidationStates
+            tvElectronegativity.text=cell.Electronegativity
+            tvAtomicRadiusls.text=cell.AtomicRadius
+            tvIonizationEnergy.text=cell.IonizationEnergy
+            tvElectronAffinity.text=cell.ElectronAffinity
+            tvMeltingPointy.text=cell.MeltingPoint
+            tvBoilingPoint.text=cell.BoilingPoint
+            tvDensity.text=cell.Density
+            tvYearDiscovered.text=cell.YearDiscovered
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -46,7 +64,8 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun onShareAction(item: MenuItem) {
-        shareImage(getScreenShoot())
+//        shareImage(getScreenShoot())
+        binding.cellImageView.setImageBitmap(getScreenShoot())
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -70,12 +89,12 @@ class DetailActivity : AppCompatActivity() {
             "title",
             null
         )
-        val uri = Uri.parse(pathofbmp)
         val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         shareIntent.setType("image/*")
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Periodic App")
         shareIntent.putExtra(Intent.EXTRA_TEXT, "")
-        shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+        shareIntent.putExtra(Intent.EXTRA_STREAM, pathofbmp.toUri())
         startActivity(Intent.createChooser(shareIntent, "Hello"))
     }
 }

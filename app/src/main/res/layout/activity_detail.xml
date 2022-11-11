@@ -53,12 +53,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cell_image_view" />
 
+                <TextView
+                    android:id="@+id/tv_standard_state"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/standard_state" />
+
                 <View
                     android:id="@+id/separator1"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -72,13 +79,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator1" />
 
+                <TextView
+                    android:id="@+id/tv_atomic_mass"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/atomic_mass" />
+
                 <View
                     android:id="@+id/separator2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
                     app:layout_constraintTop_toBottomOf="@id/atomic_mass" />
@@ -92,13 +106,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator2" />
 
+                <TextView
+                    android:id="@+id/tv_electron_configuration"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/electron_configuration" />
+
                 <View
                     android:id="@+id/separator3"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
                     app:layout_constraintTop_toBottomOf="@id/electron_configuration" />
@@ -110,6 +131,13 @@
                     android:text="Oxidation States"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator3" />
+
+                <TextView
+                    android:id="@+id/tv_oxidation_states"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/oxidation_states" />
 
                 <View
                     android:id="@+id/separator4"
@@ -130,12 +158,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator4" />
 
+                <TextView
+                    android:id="@+id/tv_electronegativity"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/electronegativity" />
+
                 <View
                     android:id="@+id/separator5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -149,12 +184,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator5" />
 
+                <TextView
+                    android:id="@+id/tv_atomic_radiusls"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/atomic_radiusls" />
+
                 <View
                     android:id="@+id/separator6"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -168,12 +210,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator6" />
 
+                <TextView
+                    android:id="@+id/tv_ionization_energy"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ionization_energy" />
+
                 <View
                     android:id="@+id/separator7"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -182,29 +231,44 @@
                 <TextView
                     android:id="@+id/electron_affinity"
                     style="@style/TextDetailStyle"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="28dp"
                     android:text="Electron Affinity"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator7" />
+
+                <TextView
+                    android:id="@+id/tv_electron_affinity"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/electron_affinity" />
 
                 <View
                     android:id="@+id/separator8"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
                     app:layout_constraintTop_toBottomOf="@id/electron_affinity" />
+
 
                 <TextView
                     android:id="@+id/melting_point"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Electron Affinity"
+                    android:text="Melting Point"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator8" />
+
+                <TextView
+                    android:id="@+id/tv_melting_pointy"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/melting_point" />
 
                 <View
                     android:id="@+id/separator9"
@@ -225,12 +289,19 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator9" />
 
+                <TextView
+                    android:id="@+id/tv_boiling_point"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/boiling_point" />
+
                 <View
                     android:id="@+id/separator10"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -244,12 +315,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator10" />
 
+                <TextView
+                    android:id="@+id/tv_density"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/density" />
+
+
                 <View
                     android:id="@+id/separator11"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="30dp"
                     android:background="@android:color/black"
                     android:visibility="visible"
@@ -259,10 +338,18 @@
                     android:id="@+id/year_discovered"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Year Discovered"
                     android:layout_marginTop="5dp"
+                    android:text="Year Discovered"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator11" />
+
+                <TextView
+                    android:id="@+id/tv_year_discovered"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/year_discovered" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
