@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Periodic_table_app</string>
     <string name="name">Akbar Marunduri</string>
+    <string name="group_block">Group Block</string>
+    <string name="year_discovered">Year Discovered</string>
+    <string name="density">Density</string>
+    <string name="boiling_point">Boiling Point</string>
+    <string name="melting_point">Melting Point</string>
+    <string name="electron_affinity">Electron Affinity</string>
+    <string name="ionization_energy">Ionization Energy</string>
+    <string name="atomic_radius">Atomic Radius</string>
+    <string name="electronegativity">Electronegativity</string>
+    <string name="oxidation_states">Oxidation States</string>
+    <string name="electron_configuration">Electron Configuration</string>
+    <string name="atomic_mass">Atomic Mass</string>
+    <string name="standard_state">Standard State</string>
 </resources>

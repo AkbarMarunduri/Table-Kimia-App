@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_main"
+    android:background="?attr/colorPrimaryVariant"
     android:fitsSystemWindows="true"
     tools:context=".DetailActivity">
 
@@ -49,7 +49,7 @@
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
-                    android:text="Standard State"
+                    android:text="@string/standard_state"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cell_image_view" />
 
@@ -75,7 +75,7 @@
                     android:id="@+id/atomic_mass"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Atomic Mass"
+                    android:text="@string/atomic_mass"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator1" />
 
@@ -102,7 +102,7 @@
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Electron Configuration"
+                    android:text="@string/electron_configuration"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator2" />
 
@@ -128,7 +128,7 @@
                     android:id="@+id/oxidation_states"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Oxidation States"
+                    android:text="@string/oxidation_states"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator3" />
 
@@ -154,7 +154,7 @@
                     android:id="@+id/electronegativity"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Electronegativity"
+                    android:text="@string/electronegativity"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator4" />
 
@@ -180,7 +180,7 @@
                     android:id="@+id/atomic_radiusls"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Atomic Radius"
+                    android:text="@string/atomic_radius"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator5" />
 
@@ -206,7 +206,7 @@
                     android:id="@+id/ionization_energy"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Ionization Energy"
+                    android:text="@string/ionization_energy"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator6" />
 
@@ -232,7 +232,7 @@
                     android:id="@+id/electron_affinity"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="28dp"
-                    android:text="Electron Affinity"
+                    android:text="@string/electron_affinity"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator7" />
 
@@ -259,7 +259,7 @@
                     android:id="@+id/melting_point"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Melting Point"
+                    android:text="@string/melting_point"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator8" />
 
@@ -285,7 +285,7 @@
                     android:id="@+id/boiling_point"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Boiling Point"
+                    android:text="@string/boiling_point"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator9" />
 
@@ -311,7 +311,7 @@
                     android:id="@+id/density"
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
-                    android:text="Density"
+                    android:text="@string/density"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator10" />
 
@@ -339,7 +339,7 @@
                     style="@style/TextDetailStyle"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
-                    android:text="Year Discovered"
+                    android:text="@string/year_discovered"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separator11" />
 
@@ -349,6 +349,33 @@
                     android:layout_marginEnd="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/year_discovered" />
+                <View
+                    android:id="@+id/separator12"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/black"
+                    android:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@id/tv_year_discovered" />
+
+                <TextView
+                    android:id="@+id/group_block"
+                    style="@style/TextDetailStyle"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/group_block"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/separator12" />
+
+                <TextView
+                    android:id="@+id/tv_group_block"
+                    style="@style/TextDetailStyle.value"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/group_block" />
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
