@@ -1,6 +1,7 @@
 package com.example.periodic_table_app.util
 
 import android.content.Context
+import android.util.Log
 import com.example.periodic_table_app.model.Cell
 import com.example.periodic_table_app.model.ResourceData
 import com.google.gson.Gson
@@ -20,6 +21,8 @@ class Database(var context: Context) {
             e.printStackTrace()
             return null
         }
+
+        Log.d("DataCell","${jsonstring}")
         return jsonstring
     }
 

@@ -23,9 +23,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        //menambahkan toolbar
+
+
+        setToolBar()
+        loadListCell()
+
+        adaptor.setOnClickCellListener(object : CellAdaptor.OnClickCellCallback {
+            override fun onClick(cell: Cell) {
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                val bundle = Bundle()
+                bundle.putParcelable("data", cell)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        })
+    }
+    
+    fun setToolBar() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.apply {
             title = "Tabel Periodik"
@@ -33,19 +48,11 @@ class MainActivity : AppCompatActivity() {
             setLogo(R.drawable.ic_baseline_device_thermostat_24)
             setDisplayUseLogoEnabled(true)
         }
+    }
 
+    fun loadListCell() {
         adaptor = CellAdaptor(db.getAllCell(), this)
         binding.rvCell.adapter = adaptor
-
-        adaptor.setOnClickCellListener(object : CellAdaptor.OnClickCellCallback {
-            override fun onClick(cell: Cell) {
-                val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                val bundle=Bundle()
-                bundle.putParcelable("data",cell)
-                intent.putExtras(bundle)
-                startActivity(intent)
-            }
-        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -19,7 +19,6 @@ class CellAdaptor(private val cells: List<Cell>, var context: Context) :
 
     inner class CellHolder(var binding: CardCellItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CellHolder {

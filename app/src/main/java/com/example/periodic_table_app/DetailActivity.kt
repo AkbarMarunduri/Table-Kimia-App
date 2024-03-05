@@ -87,41 +87,48 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun shareImage(bitmap: Bitmap) {
-        val pathofbmp = MediaStore.MediaColumns.IS_PENDING
+        val pathofbmp = MediaStore.Images.Media.insertImage(
+            applicationContext.contentResolver,
+            bitmap, "title", null
+        )
+        val uri=Uri.parse(pathofbmp)
 
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         shareIntent.setType("image/*")
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Periodic App")
         shareIntent.putExtra(Intent.EXTRA_TEXT, "")
-        shareIntent.putExtra(Intent.EXTRA_STREAM, pathofbmp)
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
         startActivity(Intent.createChooser(shareIntent, "Hello"))
 
-//        val filenaame = "IMG_${System.currentTimeMillis()}.jpeg"
-//        var fos: OutputStream? = null
-//        var imageUri: Uri? = null
-//        val contentValues = ContentValues().apply {
-//            put(MediaStore.MediaColumns.DISPLAY_NAME, filenaame)
-//            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
-//                put(MediaStore.MediaColumns.IS_PENDING, 1)
-//            }
-//        }
-//
-//        val contentResolver = application.contentResolver
-//
-//        contentResolver.also { resolve ->
-//            imageUri = resolve.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-//            fos = imageUri?.let { resolve.openOutputStream(it) }
-//        }
-//
-//        fos?.use { bitmap.compress(Bitmap.CompressFormat.JPEG, 70, it) }
-//        contentValues.clear()
-//        contentValues.put(MediaStore.Video.Media.IS_PENDING, 1)
-//        contentResolver.update(imageUri!!, contentValues, null, null)
-//
-//        return imageUri!!
+    }
+
+    fun getUriScreen(bitmap:Bitmap):Uri {
+        val filenaame = "IMG_${System.currentTimeMillis()}.jpeg"
+        var fos: OutputStream? = null
+        var imageUri: Uri? = null
+        val contentValues = ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME, filenaame)
+            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+                put(MediaStore.MediaColumns.IS_PENDING, 1)
+            }
+        }
+
+        val contentResolver = application.contentResolver
+
+        contentResolver.also { resolve ->
+            imageUri = resolve.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+            fos = imageUri?.let { resolve.openOutputStream(it) }
+        }
+
+        fos?.use { bitmap.compress(Bitmap.CompressFormat.JPEG, 70, it) }
+        contentValues.clear()
+        contentValues.put(MediaStore.Video.Media.IS_PENDING, 1)
+        contentResolver.update(imageUri!!, contentValues, null, null)
+
+        return imageUri!!
     }
 
 }
